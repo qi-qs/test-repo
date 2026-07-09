@@ -10,7 +10,7 @@
     },
     {
       "maxLength": 200,
-      "name": "Age",
+      "name": "Age1",
       "nameI18nKey": "dev1|>student|>Age",
       "storageField": "value2",
       "token": "age",
