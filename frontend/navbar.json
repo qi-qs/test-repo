@@ -3,13 +3,6 @@
   "items": [
     {
       "category": null,
-      "icon": "solar:buildings-2-linear",
-      "key": "69caa209",
-      "label": "student-list",
-      "to": "/dev1/page/student-list"
-    },
-    {
-      "category": null,
       "children": [
         {
           "category": null,
@@ -17,7 +10,8 @@
           "key": "ca907650",
           "label": "System Permission Group List",
           "label_i18n_key": "appConfig|>System Permission Group List",
-          "to": "/user-management-new/page/system-permission-group-form-list"
+          "to": "/user-management-new/page/system-permission-group-form-list",
+          "uuid": "a05dfa51-a71d-4b35-b24e-b8f382d255ae"
         },
         {
           "category": null,
@@ -25,7 +19,8 @@
           "key": "c055ef39",
           "label": "System Role List",
           "label_i18n_key": "appConfig|>System Role List",
-          "to": "/user-management-new/page/system-role-form-list"
+          "to": "/user-management-new/page/system-role-form-list",
+          "uuid": "ba623a25-41a6-424a-bbbd-a8c71caa1600"
         },
         {
           "category": null,
@@ -34,19 +29,16 @@
           "key": "8f14a7cc",
           "label": "System User List",
           "label_i18n_key": "appConfig|>System User List",
-          "to": "/user-management-new/page/system-user-form-list"
+          "to": "/user-management-new/page/system-user-form-list",
+          "uuid": "ad08df8b-2e6c-4893-845a-cccca6779744"
         }
       ],
       "icon": "solar:hanger-2-outline",
       "key": "9d491ac8",
       "label": "User Management",
       "label_i18n_key": "appConfig|>User Management",
-      "to": "/user-management-new"
-    },
-    {
-      "icon": "oct:home",
-      "label": "Status List",
-      "to": "/dev1/page/status-form-list"
+      "to": "/user-management-new",
+      "uuid": "3c58273f-8822-41fd-b54e-3906921106a2"
     }
   ],
   "position": "sidebar",

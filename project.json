@@ -8,6 +8,10 @@
     "externalDataSourceList": [ ],
     "frontEndConfig": "$$$$ref:text:frontend/frontEndConfig.json",
     "name": "Phase One",
+    "projectSettings": {
+      "projectSettings": "{\"client\":{\"commitTriggerUrl\":\"http://localhost:8090/codifier/api/commit/codifier-demo/phase1?X-Access-Token=8DgMfsgtskl2JD77-AWzjaN_Fz3PkbN5lZVmPfSdXBQ\"}}",
+      "projectToken": "phase-one"
+    },
     "tags": "blue",
     "token": "phase-one"
   }

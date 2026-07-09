@@ -40,42 +40,6 @@
     "name": "创建",
     "nameEnUs": "Create",
     "nameJaJp": "作成",
-    "target": "Status",
-    "targetToken": "status-form",
-    "token": "dev1_status-form_C"
-  },
-  {
-    "method": "D",
-    "name": "删除",
-    "nameEnUs": "Delete",
-    "nameJaJp": "削除",
-    "target": "Status",
-    "targetToken": "status-form",
-    "token": "dev1_status-form_D"
-  },
-  {
-    "method": "R",
-    "name": "读取",
-    "nameEnUs": "Read",
-    "nameJaJp": "読取",
-    "target": "Status",
-    "targetToken": "status-form",
-    "token": "dev1_status-form_R"
-  },
-  {
-    "method": "U",
-    "name": "更新",
-    "nameEnUs": "Update",
-    "nameJaJp": "更新",
-    "target": "Status",
-    "targetToken": "status-form",
-    "token": "dev1_status-form_U"
-  },
-  {
-    "method": "C",
-    "name": "创建",
-    "nameEnUs": "Create",
-    "nameJaJp": "作成",
     "target": "student",
     "targetToken": "student",
     "token": "dev1_student_C"
