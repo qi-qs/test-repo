@@ -1,0 +1,21 @@
+{
+  "category": "BUSINESS",
+  "config": "{\"menu\":[{\"to\":\"/dev1/page/student-list\",\"label\":\"student-list\",\"category\":null,\"key\":\"b93be2ff\",\"icon\":\"solar:link-outline\"}]}",
+  "contributor": "admin",
+  "eventContentList": [
+    {
+      "name": "101",
+      "pbcToken": "dev1",
+      "token": "A101"
+    }
+  ],
+  "formDashboardLayoutList": [ ],
+  "matchWeight": 0.0,
+  "name": "dev1",
+  "routesJson_$$$NESTED_JSON_STRING$$$": {
+    "desktop": { },
+    "mobile": { }
+  },
+  "token": "dev1",
+  "uiPluginList": [ ]
+}

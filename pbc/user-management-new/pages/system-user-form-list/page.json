@@ -1,0 +1,150 @@
+{
+  "name": "System User List",
+  "schemaId": "system-user-form-list",
+  "schemaJson_$$$NESTED_JSON_STRING$$$": {
+    "fields": [
+      {
+        "component": "Card",
+        "fields": [
+          {
+            "component": "Table",
+            "componentProps": {
+              "addButtonHref": "/form/system-user-form/layout/new",
+              "columnDefs": [
+                {
+                  "cellRendererParams": {
+                    "avatarStyle": "avatar-label",
+                    "componentProps": {
+                      "listType": "picture-card",
+                      "maxCount": 1
+                    }
+                  },
+                  "colId": "avatar",
+                  "field": "avatar",
+                  "headerName": "头像",
+                  "headerName_i18n_key": "user-management-new|>system-user-form-list|>头像",
+                  "minWidth": 60,
+                  "type": "AVATAR_COLUMN",
+                  "width": 80
+                },
+                {
+                  "colId": "nickName",
+                  "field": "nickName",
+                  "headerName": "用户昵称",
+                  "headerName_i18n_key": "user-management-new|>system-user-form|>昵称",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "colId": "username",
+                  "field": "username",
+                  "headerName": "用户名",
+                  "headerName_i18n_key": "user-management-new|>system-user-form|>用户名",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "colId": "role",
+                  "field": "role",
+                  "headerName": "角色",
+                  "headerName_i18n_key": "user-management-new|>system-user-form|>用户角色",
+                  "type": "ACL_COLUMN"
+                },
+                {
+                  "colId": "email",
+                  "field": "email",
+                  "headerName": "Email",
+                  "headerName_i18n_key": "user-management-new|>system-user-form|>电子邮箱",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "colId": "phone",
+                  "field": "phone",
+                  "headerName": "电话号码",
+                  "headerName_i18n_key": "user-management-new|>system-user-form|>电话号码",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "cellRendererParams": {
+                    "actions": [
+                      {
+                        "href": "/form/system-user-form/layout/edit/:id",
+                        "type": "EDIT"
+                      },
+                      {
+                        "href": "/form/system-user-form/layout/changePassword/:id",
+                        "type": "EDIT",
+                        "value": "修改密码",
+                        "value_i18n_key": "user-management-new|>system-user-form-list|>修改密码"
+                      },
+                      {
+                        "href": "/form/:id/view",
+                        "type": "VIEW"
+                      },
+                      {
+                        "type": "DELETE"
+                      }
+                    ],
+                    "displayLikeButton": true,
+                    "showIcon": true
+                  },
+                  "headerName": "操作",
+                  "headerName_i18n_key": "user-management-new|>system-user-form-list|>操作",
+                  "pinned": "right",
+                  "type": "ACTION_COLUMN",
+                  "width": 240
+                }
+              ],
+              "dataFilters": [
+                {
+                  "conditions": [
+                    {
+                      "colId": "integrationUser",
+                      "filter": "false",
+                      "filterType": "text",
+                      "id": "integrationUser",
+                      "type": "equals"
+                    },
+                    {
+                      "colId": "integrationUser",
+                      "filter": "0",
+                      "filterType": "text",
+                      "id": "integrationUser",
+                      "type": "equals"
+                    },
+                    {
+                      "colId": "integrationUser",
+                      "filterType": "text",
+                      "id": "integrationUser",
+                      "type": "blank"
+                    }
+                  ],
+                  "operator": "OR"
+                }
+              ],
+              "dataSource": {
+                "token": "system-user-form"
+              },
+              "pagination": true,
+              "pinnedFilter": [
+                "username",
+                "email",
+                "role",
+                "phone"
+              ]
+            },
+            "id": "system-user-form-table",
+            "style": {
+              "height": "100%"
+            }
+          }
+        ],
+        "style": {
+          "height": "100%"
+        }
+      }
+    ],
+    "form": {
+      "title": "用户列表",
+      "title_i18n_key": "user-management-new|>system-user-form-list|>用户列表"
+    }
+  }
+}

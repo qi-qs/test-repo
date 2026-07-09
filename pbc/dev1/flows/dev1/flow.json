@@ -1,0 +1,74 @@
+{
+  "name": "dev1",
+  "nodeList": [
+    {
+      "enabled": true,
+      "id": 1,
+      "inMemory": true,
+      "inMemoryTransaction": true,
+      "interval": 60,
+      "nodeName": "TRIGGER",
+      "periodEnd": "23:59:59",
+      "periodStart": "00:00:00",
+      "restTrigger": {
+        "eligibleForAgent": false,
+        "method": "POST",
+        "requestBody": [ ],
+        "url": "/flow/api/flow-rest/dev1"
+      },
+      "scheduleType": "ONE_TIME",
+      "startTime": 1776233960196,
+      "triggerType": "REST",
+      "type": "TRIGGER",
+      "version": "2.0"
+    },
+    {
+      "enabled": true,
+      "id": 4,
+      "nodeName": "APP - Groovy Script",
+      "sdk": {
+        "code": "$$$$ref:text:sdk-4.groovy",
+        "name": "Groovy脚本",
+        "numberStringToBigDecimal": false,
+        "sdkType": "GENERAL_GROOVY",
+        "uuid": "492f8c00-14de-4837-a1f6-ed6ff0a2870e"
+      },
+      "type": "APP",
+      "version": "1.0"
+    },
+    {
+      "enabled": true,
+      "id": 2,
+      "nodeName": "APP - New Form Data",
+      "sdk": {
+        "formInput": {
+          "email": "dev2-1@xxx.com",
+          "username": "dev2-1"
+        },
+        "input": {
+          "formEntityToken": "system-user-form",
+          "pbcToken": "user-management-new"
+        },
+        "inputFields": [ ],
+        "name": "新建表单数据",
+        "numberStringToBigDecimal": false,
+        "outputFields": [ ],
+        "sdkType": "CREATE_ENTITY",
+        "uuid": "739b0a8f-cf7a-4e83-93ca-4ebe55ef80e8"
+      },
+      "type": "APP",
+      "version": "1.0"
+    },
+    {
+      "enabled": true,
+      "id": 3,
+      "nodeName": "STOP_JOB",
+      "result": "Successful",
+      "type": "STOP_JOB"
+    }
+  ],
+  "restApiEnabled": 1,
+  "restApiMethod": "POST",
+  "restApiUrl": "/flow/api/flow-rest/dev1",
+  "token": "dev1"
+}

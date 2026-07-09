@@ -1,0 +1,22 @@
+{
+  "carousel": { },
+  "navbar": {
+    "items": [
+      {
+        "icon": "home",
+        "label": "",
+        "to": "/mobile"
+      },
+      {
+        "icon": "person",
+        "label": "",
+        "to": "/mobile/my"
+      }
+    ]
+  },
+  "subApps": [ ],
+  "tabBar": {
+    "items": [ ]
+  },
+  "tabBarUsed": false
+}

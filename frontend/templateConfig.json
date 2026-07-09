@@ -1,0 +1,22 @@
+{
+  "footer": { },
+  "header": { },
+  "login": {
+    "template": "LoginSplit"
+  },
+  "logo": {
+    "alt": "Logo",
+    "alt_i18n_key": "appConfig|>Logo",
+    "default": "default-logo-4",
+    "src": ""
+  },
+  "navbar": "$$$$ref:text:navbar.json",
+  "sidebar": {
+    "collapsible": true
+  },
+  "title": "blue",
+  "title_i18n_key": "appConfig|>blue",
+  "userMenu": {
+    "items": [ ]
+  }
+}

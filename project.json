@@ -1,0 +1,14 @@
+{
+  "project": {
+    "activated": true,
+    "contributor": "Super Admin",
+    "deleted": 0,
+    "description": "Phase One",
+    "enableFormStandaloneTable": 1,
+    "externalDataSourceList": [ ],
+    "frontEndConfig": "$$$$ref:text:frontend/frontEndConfig.json",
+    "name": "Phase One",
+    "tags": "blue",
+    "token": "phase-one"
+  }
+}

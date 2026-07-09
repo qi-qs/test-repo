@@ -1,0 +1,72 @@
+{
+  "name": "System Permission Group List",
+  "schemaId": "system-permission-group-form-list",
+  "schemaJson_$$$NESTED_JSON_STRING$$$": {
+    "fields": [
+      {
+        "component": "Card",
+        "fields": [
+          {
+            "component": "Table",
+            "componentProps": {
+              "addButtonHref": "/form/system-permission-group-form/layout/new",
+              "columnDefs": [
+                {
+                  "colId": "name",
+                  "field": "name",
+                  "headerName": "权限组名称",
+                  "headerName_i18n_key": "user-management-new|>system-permission-group-form|>权限组名称",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "cellRendererParams": {
+                    "actions": [
+                      {
+                        "href": "/form/system-permission-group-form/layout/edit/:id",
+                        "type": "EDIT"
+                      },
+                      {
+                        "href": "/form/:id/view",
+                        "type": "VIEW"
+                      },
+                      {
+                        "type": "DELETE"
+                      }
+                    ],
+                    "displayLikeButton": true,
+                    "showIcon": true
+                  },
+                  "headerName": "操作",
+                  "headerName_i18n_key": "user-management-new|>system-permission-group-form-list|>操作",
+                  "pinned": "right",
+                  "type": "ACTION_COLUMN",
+                  "width": 240
+                }
+              ],
+              "dataSource": {
+                "token": "system-permission-group-form"
+              },
+              "pagination": true,
+              "pinnedFilter": [
+                "name",
+                "projectId",
+                "pbcId"
+              ]
+            },
+            "id": "system-role-form-table",
+            "style": {
+              "height": "100%"
+            }
+          }
+        ],
+        "style": {
+          "height": "100%"
+        }
+      }
+    ],
+    "form": {
+      "title": "权限组列表",
+      "title_i18n_key": "user-management-new|>system-permission-group-form-list|>权限组列表"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "fields": [
+    {
+      "component": "Input",
+      "id": "name",
+      "title": "Name",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "component": "Input",
+      "id": "code",
+      "title": "Code",
+      "validation": {
+        "maxLength": 200
+      }
+    }
+  ],
+  "form": {
+    "defaultCancelButton": true,
+    "defaultSubmitButton": true,
+    "title": "Layout"
+  }
+}

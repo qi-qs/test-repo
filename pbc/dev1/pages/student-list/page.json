@@ -1,0 +1,74 @@
+{
+  "schemaId": "student-list",
+  "schemaJson_$$$NESTED_JSON_STRING$$$": {
+    "fields": [
+      {
+        "component": "Card",
+        "fields": [
+          {
+            "component": "Table",
+            "componentProps": {
+              "addButtonHref": "/form/student/layout/default",
+              "columnDefs": [
+                {
+                  "colId": "name",
+                  "field": "name",
+                  "headerName": "Name",
+                  "headerName_i18n_key": "dev1|>student|>Name",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "colId": "age",
+                  "field": "age",
+                  "headerName": "Age",
+                  "headerName_i18n_key": "dev1|>student|>Age",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "cellRendererParams": {
+                    "actions": [
+                      {
+                        "href": "/form/student/layout/default/:id",
+                        "type": "EDIT"
+                      },
+                      {
+                        "href": "/form/:id/view",
+                        "type": "VIEW"
+                      },
+                      {
+                        "type": "DELETE"
+                      }
+                    ],
+                    "displayLikeButton": true,
+                    "showIcon": true
+                  },
+                  "type": "ACTION_COLUMN",
+                  "width": 240
+                }
+              ],
+              "dataSource": {
+                "token": "student"
+              },
+              "pagination": true,
+              "pinnedFilter": [
+                "name",
+                "age"
+              ]
+            },
+            "id": "student-table",
+            "style": {
+              "height": "100%"
+            }
+          }
+        ],
+        "style": {
+          "height": "100%"
+        }
+      }
+    ],
+    "form": {
+      "title": "student列表",
+      "title_i18n_key": "dev1|>student-list|>student列表"
+    }
+  }
+}

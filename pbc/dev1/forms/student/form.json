@@ -1,0 +1,62 @@
+{
+  "dataLocation": "LOCAL",
+  "fields": [
+    {
+      "maxLength": 200,
+      "name": "About Me - Update",
+      "storageField": "value3",
+      "token": "aboutMe",
+      "type": "TEXT_BOX"
+    },
+    {
+      "maxLength": 200,
+      "name": "Age",
+      "nameI18nKey": "dev1|>student|>Age",
+      "storageField": "value2",
+      "token": "age",
+      "type": "TEXT_BOX"
+    },
+    {
+      "fieldConfigJson": "{\"formEntityToken\":\"score\",\"pbcToken\":\"dev1\",\"joinConditions\":[{\"colId\":\"name\",\"joinFormColId\":\"name\",\"type\":\"equals\"}]}",
+      "maxLength": 200,
+      "name": "stu-score",
+      "referenceEntity": "score",
+      "referencePbc": "dev1",
+      "token": "lkp_stu_score",
+      "type": "LOOKUP"
+    },
+    {
+      "maxLength": 200,
+      "name": "Name",
+      "nameI18nKey": "dev1|>student|>Name",
+      "storageField": "value1",
+      "token": "name",
+      "type": "TEXT_BOX"
+    }
+  ],
+  "isAutoLock": 0,
+  "isDeletableWhenReferenced": 1,
+  "isInnerEntity": 0,
+  "isMasterData": 1,
+  "layouts": [
+    {
+      "defaultLayout": true,
+      "name": "布局",
+      "sortIndex": 0,
+      "token": "default"
+    },
+    {
+      "defaultLayout": false,
+      "name": "FirstLayout",
+      "sortIndex": 1,
+      "token": "FirstLayout"
+    }
+  ],
+  "masterDataType": "CATEGORY",
+  "name": "student",
+  "permissionTarget": "student",
+  "remoteNoSystemColumns": true,
+  "standalone": 0,
+  "standaloneTableNormalized": 0,
+  "token": "student"
+}

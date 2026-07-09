@@ -1,0 +1,394 @@
+{
+  "fields": [
+    {
+      "component": "FlowLayout",
+      "componentProps": {
+        "alignItems": "stretch",
+        "gap": 25,
+        "style": {
+          "flexDirection": "column"
+        }
+      },
+      "fields": [
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "用户详细信息",
+            "title_i18n_key": "user-management-new|>system-user-form|>用户详细信息"
+          },
+          "fields": [
+            {
+              "component": "NormalLayout",
+              "fields": [
+                {
+                  "component": "UserAvatar",
+                  "componentProps": {
+                    "listType": "picture-card",
+                    "maxCount": 1
+                  },
+                  "id": "avatar"
+                },
+                {
+                  "component": "Input",
+                  "id": "uid",
+                  "title": "用户 ID",
+                  "title_i18n_key": "user-management-new|>system-user-form|>用户 ID",
+                  "uniqueField": true,
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "Please input user name",
+                    "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input user name"
+                  },
+                  "id": "username",
+                  "title": "用户名",
+                  "title_i18n_key": "user-management-new|>system-user-form|>用户名",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "Please input nick name",
+                    "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input nick name"
+                  },
+                  "id": "nickName",
+                  "title": "昵称",
+                  "title_i18n_key": "user-management-new|>system-user-form|>昵称",
+                  "validation": {
+                    "maxLength": 200,
+                    "required": true
+                  },
+                  "valueExpression": ":username"
+                },
+                {
+                  "component": "ACL",
+                  "componentProps": {
+                    "AgTableProps": {
+                      "pinnedFilter": [
+                        "name",
+                        "description"
+                      ]
+                    },
+                    "columnDefs": [
+                      {
+                        "colId": "name",
+                        "field": "name",
+                        "headerName": "角色名",
+                        "headerName_i18n_key": "user-management-new|>system-role-form|>角色名",
+                        "type": "TEXT_COLUMN"
+                      },
+                      {
+                        "colId": "description",
+                        "field": "description",
+                        "headerName": "角色描述",
+                        "headerName_i18n_key": "user-management-new|>system-role-form|>角色描述",
+                        "type": "TEXT_COLUMN"
+                      }
+                    ],
+                    "dataFilters": [
+                      {
+                        "conditions": [
+                          {
+                            "filter": "1",
+                            "filterType": "text",
+                            "id": "integrationRole",
+                            "type": "notEqual"
+                          },
+                          {
+                            "filterType": "text",
+                            "id": "integrationRole",
+                            "type": "blank"
+                          }
+                        ],
+                        "operator": "OR"
+                      }
+                    ],
+                    "dataSource": {
+                      "token": "system-role-form"
+                    },
+                    "mapping": {
+                      "label": "name",
+                      "value": "id"
+                    },
+                    "multiple": true,
+                    "stringEqual": true
+                  },
+                  "id": "role",
+                  "title": "用户角色",
+                  "title_i18n_key": "user-management-new|>system-user-form|>用户角色"
+                },
+                {
+                  "component": "Input",
+                  "domain": "test domain",
+                  "id": "gender",
+                  "module": "test module",
+                  "source": "a49f7e26-1894-40d5-b42a-813adf76e00a",
+                  "title": "性别",
+                  "title_i18n_en-US": "Gender",
+                  "title_i18n_ja-JP": "ジェンダー",
+                  "title_i18n_key": "standard|>test domain|>test module|>gender",
+                  "title_i18n_ns": "standard",
+                  "title_i18n_zh-CN": "性别",
+                  "validation": {
+                    "maxLength": 10
+                  }
+                },
+                {
+                  "component": "Input",
+                  "id": "department",
+                  "title": "部门",
+                  "title_i18n_key": "user-management-new|>system-user-form|>部门",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "Please input user phone",
+                    "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input user phone"
+                  },
+                  "id": "phone",
+                  "title": "电话号码",
+                  "title_i18n_key": "user-management-new|>system-user-form|>电话号码",
+                  "validation": {
+                    "maxLength": 200,
+                    "ootb": "isMobilePhoneNum"
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "ootb": "isEmail",
+                    "placeholder": "Please input email",
+                    "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input email"
+                  },
+                  "id": "email",
+                  "title": "电子邮箱",
+                  "title_i18n_key": "user-management-new|>system-user-form|>电子邮箱",
+                  "validation": {
+                    "maxLength": 200,
+                    "required": true
+                  }
+                },
+                {
+                  "component": "Select",
+                  "componentProps": {
+                    "dataResponseKeyPath": "",
+                    "dataUrl": "/user-management/api/login/config",
+                    "mapping": {
+                      "label": "name",
+                      "value": "token"
+                    }
+                  },
+                  "id": "ssoType",
+                  "title": "登录类型",
+                  "title_i18n_key": "user-management-new|>system-user-form|>登录类型"
+                },
+                {
+                  "component": "TimePicker",
+                  "id": "birthday",
+                  "title": "出生日期",
+                  "title_i18n_key": "user-management-new|>system-user-form|>出生日期"
+                },
+                {
+                  "component": "Input",
+                  "id": "position",
+                  "title": "职位",
+                  "title_i18n_key": "user-management-new|>system-user-form|>职位",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "id": "workStatus",
+                  "title": "在职状态",
+                  "title_i18n_key": "user-management-new|>system-user-form|>在职状态",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "id": "mailingAddress",
+                  "title": "收件地址",
+                  "title_i18n_key": "user-management-new|>system-user-form|>收件地址",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Switch",
+                  "componentProps": {
+                    "direction": "horizontal"
+                  },
+                  "id": "enabled",
+                  "title": "是否有效",
+                  "title_i18n_key": "user-management-new|>system-user-form|>是否有效"
+                },
+                {
+                  "component": "Switch",
+                  "componentProps": {
+                    "direction": "horizontal"
+                  },
+                  "id": "isAdmin",
+                  "title": "是否Admin?",
+                  "title_i18n_key": "user-management-new|>system-user-form|>是否Admin?"
+                },
+                {
+                  "component": "TimePicker",
+                  "id": "pwdResetTime",
+                  "title": "密码重置日期",
+                  "title_i18n_key": "user-management-new|>system-user-form|>密码重置日期"
+                },
+                {
+                  "component": "NumberPicker",
+                  "id": "tenantId",
+                  "title": "租户 ID",
+                  "title_i18n_key": "user-management-new|>system-user-form|>租户 ID"
+                },
+                {
+                  "component": "Input",
+                  "hidden": {
+                    "dataPredicate": {
+                      "conditions": [
+                        {
+                          "condition": "equals",
+                          "dataField": "ssoType",
+                          "value": "builtin"
+                        },
+                        {
+                          "condition": "blank",
+                          "dataField": "ssoType",
+                          "value": null
+                        }
+                      ],
+                      "operator": "OR"
+                    }
+                  },
+                  "id": "ssoUsername",
+                  "title": "统一登录用户名",
+                  "title_i18n_key": "user-management-new|>system-user-form|>统一登录用户名",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Select",
+                  "componentProps": {
+                    "options": [
+                      {
+                        "label": "允许",
+                        "label_i18n_key": "user-management-new|>system-user-form|>允许",
+                        "value": 1
+                      },
+                      {
+                        "label": "禁止",
+                        "label_i18n_key": "user-management-new|>system-user-form|>禁止",
+                        "value": 0
+                      },
+                      {
+                        "label": "统一认证不可用时允许",
+                        "label_i18n_key": "user-management-new|>system-user-form|>统一认证不可用时允许",
+                        "value": 2
+                      }
+                    ],
+                    "stringEqual": true,
+                    "valueType": "value"
+                  },
+                  "hidden": {
+                    "dataPredicate": {
+                      "conditions": [
+                        {
+                          "condition": "equals",
+                          "dataField": "ssoType",
+                          "value": "builtin"
+                        },
+                        {
+                          "condition": "blank",
+                          "dataField": "ssoType",
+                          "value": null
+                        }
+                      ],
+                      "operator": "OR"
+                    }
+                  },
+                  "id": "ssoAllowBuiltin",
+                  "title": "允许本地登录",
+                  "title_i18n_key": "user-management-new|>system-user-form|>允许本地登录"
+                },
+                {
+                  "component": "Input",
+                  "defaultValue": "user",
+                  "hidden": true,
+                  "id": "userSource",
+                  "title": "用户来源",
+                  "title_i18n_key": "user-management-new|>system-user-form|>用户来源",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "id": "projectToken",
+                  "title": "Project Token",
+                  "title_i18n_key": "user-management-new|>system-user-form|>Project Token",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "id": "integrationUser",
+                  "readonly": true,
+                  "title": "Integration User",
+                  "title_i18n_key": "user-management-new|>system-user-form|>Integration User"
+                },
+                {
+                  "component": "Textarea",
+                  "hidden": true,
+                  "id": "apiToken",
+                  "title": "API Token",
+                  "title_i18n_key": "user-management-new|>system-user-form|>API Token"
+                },
+                {
+                  "component": "Input",
+                  "id": "qrCode",
+                  "title": "二维码",
+                  "title_i18n_key": "user-management-new|>system-user-form|>二维码",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "NumberPicker",
+                  "id": "userIdleTime",
+                  "title": "用户空闲时间",
+                  "title_i18n_key": "user-management-new|>system-user-form|>用户空闲时间",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "role-detail"
+    }
+  ],
+  "form": {
+    "defaultButton": false,
+    "defaultCancelButton": true,
+    "labelLayout": "vertical",
+    "title": "用户详细信息",
+    "title_i18n_key": "user-management-new|>system-user-form|>用户详细信息"
+  }
+}

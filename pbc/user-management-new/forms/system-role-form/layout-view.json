@@ -1,0 +1,245 @@
+{
+  "fields": [
+    {
+      "component": "FlowLayout",
+      "componentProps": {
+        "gap": 25,
+        "style": {
+          "flexDirection": "column",
+          "padding": "0 0 30px 0"
+        }
+      },
+      "fields": [
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "角色基本信息",
+            "title_i18n_key": "user-management-new|>system-role-form|>角色基本信息"
+          },
+          "fields": [
+            {
+              "component": "NormalLayout",
+              "fields": [
+                {
+                  "component": "Input",
+                  "hidden": true,
+                  "id": "roleId",
+                  "title": "Role ID",
+                  "title_i18n_key": "user-management-new|>system-role-form|>Role ID",
+                  "uniqueField": true,
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "请输入角色名",
+                    "placeholder_i18n_key": "user-management-new|>system-role-form|>请输入角色名"
+                  },
+                  "id": "name",
+                  "title": "角色名",
+                  "title_i18n_key": "user-management-new|>system-role-form|>角色名",
+                  "validation": {
+                    "maxLength": 200,
+                    "required": true
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "请输入角色描述",
+                    "placeholder_i18n_key": "user-management-new|>system-role-form|>请输入角色描述"
+                  },
+                  "id": "description",
+                  "title": "角色描述",
+                  "title_i18n_key": "user-management-new|>system-role-form|>角色描述",
+                  "validation": {
+                    "maxLength": 200
+                  }
+                }
+              ]
+            }
+          ],
+          "id": "tab-basic-info"
+        },
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "角色成员",
+            "titleDesc": "该角色的用户成员列表",
+            "titleDesc_i18n_key": "user-management-new|>system-role-form|>该角色的用户成员列表",
+            "title_i18n_key": "user-management-new|>system-role-form|>角色成员"
+          },
+          "fields": [
+            {
+              "component": "ACL",
+              "componentProps": {
+                "AgTableProps": {
+                  "pinnedFilter": [
+                    "username",
+                    "email",
+                    "nickName"
+                  ]
+                },
+                "columnDefs": [
+                  {
+                    "colId": "username",
+                    "field": "username",
+                    "headerName": "用户名",
+                    "headerName_i18n_key": "user-management-new|>system-user-form|>用户名",
+                    "type": "TEXT_COLUMN"
+                  },
+                  {
+                    "colId": "email",
+                    "field": "email",
+                    "headerName": "电子邮件",
+                    "headerName_i18n_key": "user-management-new|>system-user-form|>电子邮箱",
+                    "type": "TEXT_COLUMN"
+                  },
+                  {
+                    "colId": "nickName",
+                    "field": "nickName",
+                    "headerName_i18n_en-US": "User Nickname",
+                    "headerName_i18n_ja-JP": "ユーザーのニックネーム",
+                    "headerName_i18n_key": "user-management|>system-user-form|>nickName",
+                    "headerName_i18n_zh-CN": "用户昵称",
+                    "type": "TEXT_COLUMN"
+                  }
+                ],
+                "dataSource": {
+                  "token": "system-user-form"
+                },
+                "mapping": {
+                  "label": "nickName",
+                  "value": "id"
+                },
+                "multiple": true,
+                "stringEqual": true
+              },
+              "id": "users",
+              "title": "用户列表",
+              "title_i18n_key": "user-management-new|>system-role-form|>用户列表"
+            }
+          ],
+          "id": "user-list"
+        },
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "数据权限",
+            "titleDesc": "该角色将对以下数据拥有查看、编辑、新增、删除的权限",
+            "titleDesc_i18n_key": "user-management-new|>system-role-form|>该角色将对以下数据拥有查看、编辑、新增、删除的权限",
+            "title_i18n_key": "user-management-new|>system-role-form|>数据权限"
+          },
+          "fields": [
+            {
+              "component": "Radio",
+              "componentProps": {
+                "direction": "vertical",
+                "options": [
+                  {
+                    "label": "本人的数据",
+                    "label_i18n_key": "user-management-new|>system-role-form|>本人的数据",
+                    "value": 1
+                  },
+                  {
+                    "label": "本组织的数据",
+                    "label_i18n_key": "user-management-new|>system-role-form|>本组织的数据",
+                    "value": 2
+                  },
+                  {
+                    "label": "全部数据",
+                    "label_i18n_key": "user-management-new|>system-role-form|>全部数据",
+                    "value": 4
+                  }
+                ]
+              },
+              "defaultValue": 1,
+              "id": "scope",
+              "title": "权限范围",
+              "title_i18n_key": "user-management-new|>system-role-form|>权限范围"
+            }
+          ],
+          "id": "tab-data-permission"
+        },
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "功能权限",
+            "titleDesc": "该角色将对以下功能模块拥有查看、编辑、新增、删除的权限",
+            "titleDesc_i18n_key": "user-management-new|>system-role-form|>该角色将对以下功能模块拥有查看、编辑、新增、删除的权限",
+            "title_i18n_key": "user-management-new|>system-role-form|>功能权限"
+          },
+          "fields": [
+            {
+              "component": "Tabs",
+              "componentProps": {
+                "items": [
+                  {
+                    "fields": [
+                      {
+                        "component": "Permissions",
+                        "id": "permissions"
+                      }
+                    ],
+                    "forceRender": true,
+                    "key": "permissions",
+                    "label": "权限",
+                    "label_i18n_key": "user-management-new|>system-role-form|>权限"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "component": "PermissionGroups",
+                        "componentProps": {
+                          "projectId": ":context.projectId"
+                        },
+                        "id": "permissionGroups"
+                      }
+                    ],
+                    "forceRender": true,
+                    "key": "permissionGroups",
+                    "label": "权限组",
+                    "label_i18n_key": "user-management-new|>system-role-form|>权限组"
+                  },
+                  {
+                    "fields": [
+                      {
+                        "component": "Permissions",
+                        "id": "selectedPermissions",
+                        "readonly": true
+                      }
+                    ],
+                    "forceRender": true,
+                    "key": "permissionSummary",
+                    "label": "汇总",
+                    "label_i18n_key": "user-management-new|>system-role-form|>汇总"
+                  }
+                ]
+              }
+            }
+          ],
+          "id": "tab-access-permission"
+        }
+      ],
+      "id": "role-detail"
+    }
+  ],
+  "form": {
+    "accessPermissionPredicate": {
+      "hasAllOf": [
+        "ROLE_VIEW"
+      ]
+    },
+    "defaultButton": false,
+    "defaultButtonPosition": "top",
+    "defaultCancelButton": true,
+    "labelLayout": "vertical",
+    "script": "$$$$ref:text:layout-view-script.js",
+    "style": { },
+    "title": "查看角色",
+    "title_i18n_key": "user-management-new|>system-role-form|>查看角色",
+    "transformRetrievedData": "$$$$ref:text:layout-view-transformRetrievedData.js"
+  }
+}
