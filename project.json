@@ -8,7 +8,7 @@
     "frontEndConfig": "$$$$ref:text:frontend/frontEndConfig.json",
     "name": "Phase One",
     "projectSettings": {
-      "projectSettings": "{}",
+      "projectSettings": "{\"client\":{\"commitTriggerUrl\":\"http://localhost:8090/codifier/api/commit/github-test/one?X-Access-Token=IfSKYN5SYvnTwkYw2vzk7BT54HPvBRG6E98PqhLXLj4\"}}",
       "projectToken": "phase1"
     },
     "tags": "blue",
