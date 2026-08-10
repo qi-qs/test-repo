@@ -1,0 +1,37 @@
+{
+  "fields": [
+    {
+      "component": "Input",
+      "id": "name",
+      "title": "Name",
+      "title_i18n_key": "dev1|>student|>Name",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "component": "Input",
+      "id": "age",
+      "title": "Age",
+      "title_i18n_key": "dev1|>student|>Age",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "allowI18nValue": true,
+      "component": "Input",
+      "id": "aboutMe",
+      "title": "About Me - Update",
+      "validation": {
+        "maxLength": 200
+      }
+    }
+  ],
+  "form": {
+    "defaultCancelButton": true,
+    "defaultSubmitButton": true,
+    "title": "布局",
+    "title_i18n_key": "dev1|>student|>布局"
+  }
+}

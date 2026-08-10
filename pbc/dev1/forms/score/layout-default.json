@@ -1,0 +1,26 @@
+{
+  "fields": [
+    {
+      "component": "Input",
+      "id": "name",
+      "title": "Name",
+      "title_i18n_key": "dev1|>score|>Name",
+      "validation": {
+        "maxLength": 200
+      }
+    },
+    {
+      "component": "Input",
+      "id": "score",
+      "title": "Score",
+      "title_i18n_key": "dev1|>score|>Score",
+      "validation": {
+        "maxLength": 200
+      }
+    }
+  ],
+  "form": {
+    "title": "布局",
+    "title_i18n_key": "dev1|>score|>布局"
+  }
+}

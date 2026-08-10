@@ -1,0 +1,43 @@
+{
+  "dataLocation": "LOCAL",
+  "fields": [
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Name",
+      "nameI18nKey": "dev1|>score|>Name",
+      "storageField": "value1",
+      "token": "name",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Score",
+      "nameI18nKey": "dev1|>score|>Score",
+      "storageField": "value2",
+      "token": "score",
+      "type": "TEXT_BOX"
+    }
+  ],
+  "isAutoLock": 0,
+  "isDeletableWhenReferenced": 1,
+  "isInnerEntity": 0,
+  "isMasterData": 0,
+  "layouts": [
+    {
+      "defaultLayout": true,
+      "name": "布局",
+      "sortIndex": 0,
+      "token": "default"
+    }
+  ],
+  "name": "Score",
+  "permissionTarget": "score",
+  "remoteNoSystemColumns": true,
+  "standalone": 0,
+  "standaloneTableNormalized": 0,
+  "token": "score"
+}

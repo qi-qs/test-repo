@@ -1,0 +1,71 @@
+{
+  "schemaId": "status-form-list",
+  "schemaJson_$$$NESTED_JSON_STRING$$$": {
+    "fields": [
+      {
+        "component": "Card",
+        "fields": [
+          {
+            "component": "Table",
+            "componentProps": {
+              "addButtonHref": "/form/status-form/layout/default",
+              "columnDefs": [
+                {
+                  "colId": "code",
+                  "field": "code",
+                  "headerName": "Code",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "colId": "name",
+                  "field": "name",
+                  "headerName": "Name",
+                  "type": "TEXT_COLUMN"
+                },
+                {
+                  "cellRendererParams": {
+                    "actions": [
+                      {
+                        "href": "/form/status-form/layout/default/:id",
+                        "type": "EDIT"
+                      },
+                      {
+                        "href": "/form/:id/view",
+                        "type": "VIEW"
+                      },
+                      {
+                        "type": "DELETE"
+                      }
+                    ],
+                    "displayLikeButton": true,
+                    "showIcon": true
+                  },
+                  "type": "ACTION_COLUMN",
+                  "width": 240
+                }
+              ],
+              "dataSource": {
+                "token": "status-form"
+              },
+              "pagination": true,
+              "pinnedFilter": [
+                "code",
+                "name"
+              ]
+            },
+            "id": "status-form-table",
+            "style": {
+              "height": "100%"
+            }
+          }
+        ],
+        "style": {
+          "height": "100%"
+        }
+      }
+    ],
+    "form": {
+      "title": "Status List"
+    }
+  }
+}

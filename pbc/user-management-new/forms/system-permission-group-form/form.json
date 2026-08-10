@@ -1,0 +1,127 @@
+{
+  "dataLocation": "LOCAL",
+  "defaultMobileViewLayoutToken": "view",
+  "defaultViewLayoutToken": "view",
+  "fields": [
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Is System Permission Group?",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>Is System Permission Group?",
+      "storageField": "value5",
+      "token": "isSystem",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "权限组名称",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>权限组名称",
+      "storageField": "value1",
+      "token": "name",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "PBC ID",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>PBC ID",
+      "storageField": "value3",
+      "token": "pbcId",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "PBC Token",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>PBC Token",
+      "storageField": "value4",
+      "token": "pbcToken",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Permission Group ID",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>Permission Group ID",
+      "storageField": "value6",
+      "token": "permissionGroupId",
+      "type": "TEXT_BOX",
+      "uniqueField": true
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Project ID",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>Project ID",
+      "storageField": "value2",
+      "token": "projectId",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Project Token",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>Project Token",
+      "storageField": "value16",
+      "token": "projectToken",
+      "type": "TEXT_BOX"
+    },
+    {
+      "encryptStorage": 0,
+      "encryptTransit": 0,
+      "maxLength": 200,
+      "name": "Permission Group Token",
+      "nameI18nKey": "user-management-new|>system-permission-group-form|>Permission Group Token",
+      "storageField": "value13",
+      "token": "token",
+      "type": "TEXT_BOX"
+    }
+  ],
+  "isAutoLock": 0,
+  "isDeletableWhenReferenced": 1,
+  "isInnerEntity": 0,
+  "isMasterData": 1,
+  "layouts": [
+    {
+      "defaultLayout": false,
+      "name": "New Permission Group",
+      "sortIndex": 0,
+      "token": "new"
+    },
+    {
+      "defaultLayout": false,
+      "name": "Edit Permission Group",
+      "sortIndex": 1,
+      "token": "edit"
+    },
+    {
+      "defaultLayout": true,
+      "name": "Permission group brief information",
+      "sortIndex": 2,
+      "token": "view"
+    },
+    {
+      "defaultLayout": false,
+      "name": "Permission group detail information",
+      "sortIndex": 3,
+      "token": "detail"
+    }
+  ],
+  "masterDataType": "PERMISSION-GROUP",
+  "name": "System Permission Group",
+  "permissionTarget": "system-permission-group-form",
+  "remoteNoSystemColumns": true,
+  "standalone": 1,
+  "standaloneTableName": "form_um_permission_group",
+  "standaloneTableNormalized": 0,
+  "token": "system-permission-group-form",
+  "usingNewOrgTreeDataSecurity": 0
+}

@@ -1,0 +1,23 @@
+{
+  "config_$$$NESTED_JSON_STRING$$$": {
+    "appConfig": {
+      "appearance": "light",
+      "baseUrl": "/ui/",
+      "description": "",
+      "favicon": "public/favicon.ico",
+      "i18n": "$$$$ref:text:i18n.json",
+      "mobileTemplate": "MobileTemplate1",
+      "mobileTemplateConfig": "$$$$ref:text:mobile-template.json",
+      "projectName": "",
+      "template": "Template2",
+      "templateConfig": "$$$$ref:text:templateConfig.json",
+      "themeConfig": "$$$$ref:text:themeConfig.json",
+      "title": "blue",
+      "title_i18n_key": "appConfig|>blue"
+    },
+    "routers": {
+      "desktop": "$$$$ref:text:routers/desktop.json",
+      "mobile": "$$$$ref:text:routers/mobile.json"
+    }
+  }
+}

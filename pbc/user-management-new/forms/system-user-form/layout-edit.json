@@ -1,0 +1,516 @@
+{
+  "fields": [
+    {
+      "component": "Stack",
+      "componentProps": {
+        "flexDirection": "column",
+        "gap": 16
+      },
+      "fields": [
+        {
+          "component": "Card",
+          "fields": [
+            {
+              "component": "Stack",
+              "componentProps": {
+                "flexDirection": "column",
+                "gap": 16
+              },
+              "fields": [
+                {
+                  "component": "Text",
+                  "componentProps": {
+                    "content": "基本信息",
+                    "content_i18n_key": "user-management-new|>system-user-form|>基本信息"
+                  },
+                  "style": {
+                    "fontSize": 18,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "component": "Stack",
+                  "componentProps": {
+                    "flexDirection": "column",
+                    "gap": 12
+                  },
+                  "fields": [
+                    {
+                      "component": "UserAvatar",
+                      "componentProps": {
+                        "listType": "picture-card",
+                        "maxCount": 1
+                      },
+                      "id": "avatar"
+                    },
+                    {
+                      "component": "Input",
+                      "componentProps": {
+                        "placeholder": "Please input user name",
+                        "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input user name"
+                      },
+                      "id": "username",
+                      "title": "用户名",
+                      "title_i18n_key": "user-management-new|>system-user-form|>用户名",
+                      "validation": {
+                        "maxLength": 200,
+                        "required": true
+                      }
+                    },
+                    {
+                      "component": "Input",
+                      "componentProps": {
+                        "placeholder": "Please input nick name",
+                        "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input nick name"
+                      },
+                      "id": "nickName",
+                      "title": "昵称",
+                      "title_i18n_key": "user-management-new|>system-user-form|>昵称",
+                      "validation": {
+                        "maxLength": 200
+                      },
+                      "valueExpression": ":username"
+                    },
+                    {
+                      "component": "ACL",
+                      "componentProps": {
+                        "AgTableProps": {
+                          "pinnedFilter": [
+                            "name",
+                            "description"
+                          ]
+                        },
+                        "columnDefs": [
+                          {
+                            "colId": "name",
+                            "field": "name",
+                            "headerName": "角色名",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>角色名",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "description",
+                            "field": "description",
+                            "headerName": "角色描述",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>角色描述",
+                            "type": "TEXT_COLUMN"
+                          }
+                        ],
+                        "dataFilters": [
+                          {
+                            "conditions": [
+                              {
+                                "filter": "1",
+                                "filterType": "text",
+                                "id": "integrationRole",
+                                "type": "notEqual"
+                              },
+                              {
+                                "filterType": "text",
+                                "id": "integrationRole",
+                                "type": "blank"
+                              }
+                            ],
+                            "operator": "OR"
+                          }
+                        ],
+                        "dataSource": {
+                          "token": "system-role-form"
+                        },
+                        "mapping": {
+                          "label": "name",
+                          "value": "id"
+                        },
+                        "multiple": true,
+                        "stringEqual": true
+                      },
+                      "id": "role",
+                      "title": "用户角色",
+                      "title_i18n_key": "user-management-new|>system-user-form|>用户角色"
+                    },
+                    {
+                      "component": "ACL",
+                      "componentProps": {
+                        "AgTableProps": {
+                          "pinnedFilter": [
+                            "projectId",
+                            "pbcId",
+                            "pbcToken"
+                          ]
+                        },
+                        "columnDefs": [
+                          {
+                            "colId": "projectId",
+                            "field": "projectId",
+                            "headerName": "Project ID",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Project ID",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "pbcId",
+                            "field": "pbcId",
+                            "headerName": "PBC ID",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>PBC ID",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "pbcToken",
+                            "field": "pbcToken",
+                            "headerName": "PBC Token",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>PBC Token",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "isSystem",
+                            "field": "isSystem",
+                            "headerName": "Is System Role?",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Is System Role?",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "integrationRole",
+                            "field": "integrationRole",
+                            "headerName": "Integration Role",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Integration Role",
+                            "type": "NUMBER_COLUMN"
+                          },
+                          {
+                            "colId": "uuid",
+                            "field": "uuid",
+                            "headerName": "UUID",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>UUID",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "orgFormToken",
+                            "field": "orgFormToken",
+                            "headerName": "Org Form Token",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Org Form Token",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "orgFormPbcToken",
+                            "field": "orgFormPbcToken",
+                            "headerName": "Org Form Pbc Token",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Org Form Pbc Token",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "description",
+                            "field": "description",
+                            "headerName": "角色描述",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>角色描述",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "users",
+                            "field": "users",
+                            "headerName": "用户列表",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>用户列表",
+                            "type": "ACL_COLUMN"
+                          },
+                          {
+                            "colId": "scope",
+                            "field": "scope",
+                            "headerName": "权限范围",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>权限范围",
+                            "type": "RADIO_COLUMN"
+                          },
+                          {
+                            "colId": "name",
+                            "field": "name",
+                            "headerName": "角色名",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>角色名",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "roleId",
+                            "field": "roleId",
+                            "headerName": "Role ID",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Role ID",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "token",
+                            "field": "token",
+                            "headerName": "Role Token",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Role Token",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "pid",
+                            "field": "pid",
+                            "headerName": "pid",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>pid",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "tenantId",
+                            "field": "tenantId",
+                            "headerName": "Tenant ID",
+                            "headerName_i18n_key": "user-management-new|>system-role-form|>Tenant ID",
+                            "type": "TEXT_COLUMN"
+                          },
+                          {
+                            "colId": "projectToken",
+                            "field": "projectToken",
+                            "headerName": null,
+                            "headerName_i18n_key": "user-management|>system-role-form|>projectToken",
+                            "type": "TEXT_COLUMN"
+                          }
+                        ],
+                        "dataSource": {
+                          "token": "system-role-form"
+                        },
+                        "mapping": {
+                          "label": "projectId",
+                          "value": "id"
+                        },
+                        "stringEqual": true
+                      },
+                      "id": "role2",
+                      "title": "ACL选择",
+                      "title_i18n_key": "user-management-new|>system-user-form|>ACL选择"
+                    },
+                    {
+                      "component": "RichText",
+                      "id": "comments",
+                      "title": "富文本",
+                      "title_i18n_key": "user-management-new|>system-user-form|>富文本"
+                    },
+                    {
+                      "component": "Upload",
+                      "componentProps": {
+                        "listType": "text"
+                      },
+                      "id": "files",
+                      "title": "上传",
+                      "title_i18n_key": "user-management-new|>system-user-form|>上传"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "Card",
+          "fields": [
+            {
+              "component": "Stack",
+              "componentProps": {
+                "flexDirection": "column",
+                "gap": 16
+              },
+              "fields": [
+                {
+                  "component": "Text",
+                  "componentProps": {
+                    "content": "联系信息",
+                    "content_i18n_key": "user-management-new|>system-user-form|>联系信息"
+                  },
+                  "style": {
+                    "fontSize": 18,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "component": "Stack",
+                  "componentProps": {
+                    "flexDirection": "column",
+                    "gap": 12
+                  },
+                  "fields": [
+                    {
+                      "component": "Input",
+                      "componentProps": {
+                        "ootb": "isEmail",
+                        "placeholder": "Please input email",
+                        "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input email"
+                      },
+                      "id": "email",
+                      "title": "电子邮箱",
+                      "title_i18n_key": "user-management-new|>system-user-form|>电子邮箱",
+                      "validation": {
+                        "maxLength": 200,
+                        "required": true
+                      }
+                    },
+                    {
+                      "component": "Input",
+                      "componentProps": {
+                        "placeholder": "Please input user phone",
+                        "placeholder_i18n_key": "user-management-new|>system-user-form|>Please input user phone"
+                      },
+                      "id": "phone",
+                      "title": "电话号码",
+                      "title_i18n_key": "user-management-new|>system-user-form|>电话号码",
+                      "validation": {
+                        "maxLength": 200,
+                        "ootb": "isMobilePhoneNum"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "Card",
+          "fields": [
+            {
+              "component": "Stack",
+              "componentProps": {
+                "flexDirection": "column",
+                "gap": 16
+              },
+              "fields": [
+                {
+                  "component": "Text",
+                  "componentProps": {
+                    "content": "账户安全",
+                    "content_i18n_key": "user-management-new|>system-user-form|>账户安全"
+                  },
+                  "style": {
+                    "fontSize": 18,
+                    "fontWeight": 600
+                  }
+                },
+                {
+                  "component": "Stack",
+                  "componentProps": {
+                    "flexDirection": "column",
+                    "gap": 12
+                  },
+                  "fields": [
+                    {
+                      "component": "Select",
+                      "componentProps": {
+                        "allowClear": true,
+                        "dataResponseKeyPath": "",
+                        "dataUrl": "/user-management/api/login/config",
+                        "mapping": {
+                          "label": "name",
+                          "value": "token"
+                        }
+                      },
+                      "id": "ssoType",
+                      "title": "登录类型",
+                      "title_i18n_key": "user-management-new|>system-user-form|>登录类型"
+                    },
+                    {
+                      "component": "Switch",
+                      "componentProps": {
+                        "direction": "horizontal"
+                      },
+                      "id": "enabled",
+                      "title": "是否有效",
+                      "title_i18n_key": "user-management-new|>system-user-form|>是否有效"
+                    },
+                    {
+                      "component": "Input",
+                      "hidden": {
+                        "dataPredicate": {
+                          "conditions": [
+                            {
+                              "condition": "equals",
+                              "dataField": "ssoType",
+                              "value": "builtin"
+                            },
+                            {
+                              "condition": "blank",
+                              "dataField": "ssoType",
+                              "value": null
+                            }
+                          ],
+                          "operator": "OR"
+                        }
+                      },
+                      "id": "ssoUsername",
+                      "title": "统一登录用户名",
+                      "title_i18n_key": "user-management-new|>system-user-form|>统一登录用户名",
+                      "validation": {
+                        "maxLength": 200
+                      }
+                    },
+                    {
+                      "component": "Select",
+                      "componentProps": {
+                        "options": [
+                          {
+                            "label": "允许",
+                            "label_i18n_key": "user-management-new|>system-user-form|>允许",
+                            "value": 1
+                          },
+                          {
+                            "label": "禁止",
+                            "label_i18n_key": "user-management-new|>system-user-form|>禁止",
+                            "value": 0
+                          },
+                          {
+                            "label": "统一认证不可用时允许",
+                            "label_i18n_key": "user-management-new|>system-user-form|>统一认证不可用时允许",
+                            "value": 2
+                          }
+                        ],
+                        "stringEqual": true,
+                        "valueType": "value"
+                      },
+                      "hidden": {
+                        "dataPredicate": {
+                          "conditions": [
+                            {
+                              "condition": "equals",
+                              "dataField": "ssoType",
+                              "value": "builtin"
+                            },
+                            {
+                              "condition": "blank",
+                              "dataField": "ssoType",
+                              "value": null
+                            }
+                          ],
+                          "operator": "OR"
+                        }
+                      },
+                      "id": "ssoAllowBuiltin",
+                      "title": "允许本地登录",
+                      "title_i18n_key": "user-management-new|>system-user-form|>允许本地登录"
+                    },
+                    {
+                      "component": "Input",
+                      "defaultValue": "user",
+                      "hidden": true,
+                      "id": "userSource",
+                      "title": "用户来源",
+                      "title_i18n_key": "user-management-new|>system-user-form|>用户来源",
+                      "validation": {
+                        "maxLength": 200
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "form": {
+    "accessPermissionPredicate": {
+      "hasAllOf": [
+        "USER_EDIT",
+        "USER_VIEW"
+      ]
+    },
+    "defaultButton": false,
+    "defaultCancelButton": true,
+    "defaultSubmitButton": true,
+    "labelLayout": "vertical",
+    "title": "修改用户",
+    "title_i18n_key": "user-management-new|>system-user-form|>修改用户",
+    "transformRetrievedData": "$$$$ref:text:layout-edit-transformRetrievedData.js"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "fields": [
+    {
+      "component": "FlowLayout",
+      "componentProps": {
+        "gap": 25,
+        "style": {
+          "flexDirection": "column"
+        }
+      },
+      "fields": [
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "权限组基本详情",
+            "title_i18n_key": "user-management-new|>system-permission-group-form|>权限组基本详情"
+          },
+          "fields": [
+            {
+              "component": "NormalLayout",
+              "fields": [
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "请输入权限组名称",
+                    "placeholder_i18n_key": "user-management-new|>system-permission-group-form|>请输入权限组名称"
+                  },
+                  "id": "name",
+                  "title": "权限组名称",
+                  "title_i18n_key": "user-management-new|>system-permission-group-form|>权限组名称",
+                  "validation": {
+                    "maxLength": 200,
+                    "required": true
+                  }
+                },
+                {
+                  "component": "Input",
+                  "hidden": true,
+                  "id": "permissionGroupId",
+                  "readonly": true,
+                  "title": "Permission Group ID",
+                  "title_i18n_key": "user-management-new|>system-permission-group-form|>Permission Group ID",
+                  "uniqueField": true,
+                  "validation": {
+                    "maxLength": 200
+                  }
+                }
+              ]
+            }
+          ],
+          "id": "tab-basic-info"
+        },
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "功能权限",
+            "titleDesc": "包含该权限组的角色将对以下功能模块拥有查看、编辑、新增、删除的权限。",
+            "titleDesc_i18n_key": "user-management-new|>system-permission-group-form|>包含该权限组的角色将对以下功能模块拥有查看、编辑、新增、删除",
+            "title_i18n_key": "user-management-new|>system-permission-group-form|>功能权限"
+          },
+          "fields": [
+            {
+              "component": "Permissions",
+              "id": "permissions"
+            }
+          ],
+          "id": "tab-access-permission"
+        },
+        {
+          "component": "Card",
+          "fields": [
+            {
+              "component": "Input",
+              "id": "token",
+              "title": "Permission Group Token",
+              "title_i18n_key": "user-management-new|>system-permission-group-form|>Permission Group Token",
+              "validation": {
+                "maxLength": 200
+              }
+            },
+            {
+              "component": "Input",
+              "id": "projectToken",
+              "title": "Project Token",
+              "title_i18n_key": "user-management-new|>system-permission-group-form|>Project Token",
+              "validation": {
+                "maxLength": 200
+              }
+            },
+            {
+              "component": "Input",
+              "id": "projectId",
+              "title": "Project ID",
+              "title_i18n_key": "user-management-new|>system-permission-group-form|>Project ID",
+              "validation": {
+                "maxLength": 200
+              }
+            },
+            {
+              "component": "Input",
+              "id": "pbcId",
+              "title": "PBC ID",
+              "title_i18n_key": "user-management-new|>system-permission-group-form|>PBC ID",
+              "validation": {
+                "maxLength": 200
+              }
+            },
+            {
+              "component": "Input",
+              "id": "pbcToken",
+              "title": "PBC Token",
+              "title_i18n_key": "user-management-new|>system-permission-group-form|>PBC Token",
+              "validation": {
+                "maxLength": 200
+              }
+            },
+            {
+              "component": "Input",
+              "id": "isSystem",
+              "title": "Is System Permission Group?",
+              "title_i18n_key": "user-management-new|>system-permission-group-form|>Is System Permission Group?",
+              "validation": {
+                "maxLength": 200
+              }
+            }
+          ]
+        }
+      ],
+      "id": "permission-group-detail"
+    }
+  ],
+  "form": {
+    "accessPermissionPredicate": {
+      "hasAllOf": [
+        "user-management-new_system-permission-group-form_R"
+      ]
+    },
+    "defaultButton": false,
+    "defaultButtonPosition": "bottom",
+    "defaultCancelButton": true,
+    "labelLayout": "vertical"
+  }
+}

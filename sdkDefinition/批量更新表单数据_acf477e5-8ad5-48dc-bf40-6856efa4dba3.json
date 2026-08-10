@@ -1,0 +1,68 @@
+{
+  "definition_$$$NESTED_JSON_STRING$$$": {
+    "formEntityId": "",
+    "formInput": null,
+    "input": {
+      "needReturnValue": "true"
+    },
+    "inputFields": [
+      {
+        "controlType": "entity",
+        "label": "表单",
+        "label_i18n_en-US": "Form Entity",
+        "label_i18n_ja-JP": "Form Entity",
+        "name": "formEntityToken",
+        "optional": false
+      },
+      {
+        "controlType": "input",
+        "dataType": "string",
+        "label": "batchInput",
+        "label_i18n_en-US": "Bulk data insertion",
+        "label_i18n_ja-JP": "一括データ追加",
+        "name": "batchInput",
+        "optional": false
+      },
+      {
+        "controlType": "input",
+        "dataType": "string",
+        "label": "ids",
+        "label_i18n_en-US": "ids",
+        "label_i18n_ja-JP": "ids",
+        "name": "ids",
+        "optional": false
+      },
+      {
+        "controlType": "input",
+        "label": "Batch Size",
+        "label_i18n_en-US": "Batch Size",
+        "label_i18n_ja-JP": "バッチサイズ",
+        "name": "batchSize",
+        "optional": false
+      }
+    ],
+    "outputFields": [
+      {
+        "dataType": "list",
+        "label": "返回结果",
+        "label_i18n_en-US": "results",
+        "label_i18n_ja-JP": "結果",
+        "name": "results"
+      },
+      {
+        "dataType": "string",
+        "label": "返回数量",
+        "label_i18n_en-US": "count",
+        "label_i18n_ja-JP": "数量",
+        "name": "count"
+      }
+    ],
+    "sdkType": "BATCH_SET_ENTITY_FIELD_VALUE"
+  },
+  "isSystem": 1,
+  "name": "批量更新表单数据",
+  "nameEnUs": "Bulk update form data",
+  "nameJaJp": "一括でフォームデータを更新する",
+  "sdkType": "BATCH_SET_ENTITY_FIELD_VALUE",
+  "uuid": "acf477e5-8ad5-48dc-bf40-6856efa4dba3"
+}

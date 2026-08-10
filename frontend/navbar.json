@@ -1,0 +1,54 @@
+{
+  "appearance": "light",
+  "items": [
+    {
+      "category": null,
+      "icon": "solar:buildings-2-linear",
+      "key": "69caa209",
+      "label": "student-list",
+      "to": "/dev1/page/student-list"
+    },
+    {
+      "category": null,
+      "children": [
+        {
+          "category": null,
+          "icon": "solar:map-outline",
+          "key": "ca907650",
+          "label": "System Permission Group List",
+          "label_i18n_key": "appConfig|>System Permission Group List",
+          "to": "/user-management-new/page/system-permission-group-form-list"
+        },
+        {
+          "category": null,
+          "icon": "solar:clapperboard-play-outline",
+          "key": "c055ef39",
+          "label": "System Role List",
+          "label_i18n_key": "appConfig|>System Role List",
+          "to": "/user-management-new/page/system-role-form-list"
+        },
+        {
+          "category": null,
+          "children": [ ],
+          "icon": "solar:basketball-outline",
+          "key": "8f14a7cc",
+          "label": "System User List",
+          "label_i18n_key": "appConfig|>System User List",
+          "to": "/user-management-new/page/system-user-form-list"
+        }
+      ],
+      "icon": "solar:hanger-2-outline",
+      "key": "9d491ac8",
+      "label": "User Management",
+      "label_i18n_key": "appConfig|>User Management",
+      "to": "/user-management-new"
+    },
+    {
+      "icon": "oct:home",
+      "label": "Status List",
+      "to": "/dev1/page/status-form-list"
+    }
+  ],
+  "position": "sidebar",
+  "searchEnabled": true
+}

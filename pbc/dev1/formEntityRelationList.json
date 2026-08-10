@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "joinConditions": [
+      {
+        "colId": "name",
+        "joinFormColId": "name",
+        "type": "equals"
+      }
+    ],
+    "name": "stu-score",
+    "pbcId": 14,
+    "projectId": 4,
+    "queryStrategy": "AUTO",
+    "relationType": "ONE_TO_MANY",
+    "sourceEntityToken": "student",
+    "sourcePbcToken": "dev1",
+    "targetEntityToken": "score",
+    "targetPbcToken": "dev1",
+    "token": "stu-score"
+  }
+]

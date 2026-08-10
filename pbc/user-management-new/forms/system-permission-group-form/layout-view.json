@@ -1,0 +1,86 @@
+{
+  "fields": [
+    {
+      "component": "FlowLayout",
+      "componentProps": {
+        "gap": 25,
+        "style": {
+          "flexDirection": "column",
+          "padding": "0 0 30px 0"
+        }
+      },
+      "fields": [
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "权限组基本详情",
+            "title_i18n_key": "user-management-new|>system-permission-group-form|>权限组基本详情"
+          },
+          "fields": [
+            {
+              "component": "NormalLayout",
+              "fields": [
+                {
+                  "component": "Input",
+                  "hidden": true,
+                  "id": "permissionGroupId",
+                  "title": "Permission Group ID",
+                  "title_i18n_key": "user-management-new|>system-permission-group-form|>Permission Group ID",
+                  "uniqueField": true,
+                  "validation": {
+                    "maxLength": 200
+                  }
+                },
+                {
+                  "component": "Input",
+                  "componentProps": {
+                    "placeholder": "请输入权限组名称",
+                    "placeholder_i18n_key": "user-management-new|>system-permission-group-form|>请输入权限组名称"
+                  },
+                  "id": "name",
+                  "title": "权限组名称",
+                  "title_i18n_key": "user-management-new|>system-permission-group-form|>权限组名称",
+                  "validation": {
+                    "maxLength": 200,
+                    "required": true
+                  }
+                }
+              ]
+            }
+          ],
+          "id": "tab-basic-info"
+        },
+        {
+          "component": "CardLayout",
+          "componentProps": {
+            "title": "功能权限",
+            "titleDesc": "包含该权限组的角色将对以下功能模块拥有查看、编辑、新增、删除的权限。",
+            "titleDesc_i18n_key": "user-management-new|>system-permission-group-form|>包含该权限组的角色将对以下功能模块拥有查看、编辑、新增、删除",
+            "title_i18n_key": "user-management-new|>system-permission-group-form|>功能权限"
+          },
+          "fields": [
+            {
+              "component": "Permissions",
+              "id": "permissions"
+            }
+          ],
+          "id": "tab-access-permission"
+        }
+      ],
+      "id": "permission-group-detail"
+    }
+  ],
+  "form": {
+    "accessPermissionPredicate": {
+      "hasAllOf": [
+        "user-management-new_system-permission-group-form_R"
+      ]
+    },
+    "defaultButton": false,
+    "defaultButtonPosition": "top",
+    "defaultCancelButton": true,
+    "labelLayout": "vertical",
+    "title": "查看权限组",
+    "title_i18n_key": "user-management-new|>system-permission-group-form|>查看权限组"
+  }
+}

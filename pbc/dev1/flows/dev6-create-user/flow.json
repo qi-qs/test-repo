@@ -1,0 +1,118 @@
+{
+  "name": "dev6-create-user",
+  "nodeList": [
+    {
+      "enabled": true,
+      "id": 1,
+      "inMemory": true,
+      "inMemoryTransaction": false,
+      "interval": 60,
+      "nodeName": "TRIGGER",
+      "periodEnd": "23:59:59",
+      "periodStart": "00:00:00",
+      "restFlowReturnWithoutWaitingResult": true,
+      "restTrigger": {
+        "eligibleForAgent": false,
+        "method": "GET",
+        "requestBody": [ ],
+        "url": "/flow/api/flow-rest-selfauth/dev6"
+      },
+      "scheduleType": "ONE_TIME",
+      "startTime": 1776435480524,
+      "triggerType": "REST",
+      "type": "TRIGGER",
+      "version": "2.0"
+    },
+    {
+      "enabled": true,
+      "id": 2,
+      "nodeName": "APP - Groovy脚本",
+      "sdk": {
+        "code": "$$$$ref:text:sdk-2.groovy",
+        "input": { },
+        "inputFields": [ ],
+        "name": "Groovy脚本",
+        "numberStringToBigDecimal": false,
+        "sdkType": "GENERAL_GROOVY",
+        "uuid": "492f8c00-14de-4837-a1f6-ed6ff0a2870e"
+      },
+      "type": "APP",
+      "version": "1.0"
+    },
+    {
+      "enabled": true,
+      "id": 4,
+      "nodeName": "APP - 批量新建表单数据",
+      "sdk": {
+        "formEntityId": "",
+        "input": {
+          "batchInput": "$2.data",
+          "batchSize": "0",
+          "formEntityToken": "student",
+          "needReturnValue": "false",
+          "pbcToken": "dev1"
+        },
+        "inputFields": [
+          {
+            "controlType": "input",
+            "dataType": "string",
+            "label": "batchInput",
+            "name": "batchInput",
+            "optional": true
+          },
+          {
+            "controlType": "entity",
+            "label": "Form Entity",
+            "name": "formEntityToken",
+            "optional": false
+          },
+          {
+            "controlType": "select",
+            "dataType": "string",
+            "label": "是否需要返回创建的值",
+            "name": "needReturnValue",
+            "optional": true,
+            "pickList": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "controlType": "input",
+            "label": "Batch Size",
+            "name": "batchSize",
+            "optional": false
+          }
+        ],
+        "name": "批量新建表单数据",
+        "numberStringToBigDecimal": false,
+        "outputFields": [
+          {
+            "label": "返回结果",
+            "name": "results"
+          },
+          {
+            "dataType": "string",
+            "label": "返回数量",
+            "name": "count"
+          }
+        ],
+        "sdkType": "BATCH_CREATE_ENTITY",
+        "uuid": "8abc1654-b307-4fe9-b41a-72f9d7481e79"
+      },
+      "type": "APP",
+      "version": "1.0"
+    },
+    {
+      "enabled": true,
+      "id": 3,
+      "nodeName": "STOP_JOB",
+      "result": "Successful",
+      "type": "STOP_JOB"
+    }
+  ],
+  "restApiEnabled": 1,
+  "restApiMethod": "GET",
+  "restApiUrl": "/flow/api/flow-rest-selfauth/dev6",
+  "token": "dev6-create-user"
+}
